@@ -11,4 +11,8 @@ main {
 .headtext {
     background: lightgrey;
 }
+
+#is_urgent_switch {
+    margin-left: 40px;
+}
   
