@@ -10,4 +10,28 @@
         </div>
     </div>
 
+    <ul class="collapsible">
+        {% for task in tasks %}
+            <li>
+                <div class="collapsible-header text-white light-blue darken-4"><i class="fas fa-caret-square-down"></i>
+                    <span>{{ task.task_name }} - </span>
+                    <span>{{ task.due_date.strftime("%d %B %Y") }}</span>
+                </div>
+                <div class="collapsible-body">
+                    <h5>
+                        {% for category in categories %}
+                            {% if category.id == task.category_id %}
+                                {{ category.category_name }}
+                            {% endif %}
+                        {% endfor %}
+                    </h5>
+                    <p>{{ task.task_description }}</p>
+                    {% if task.is_urgent %}
+                        <p>URGENT</p>
+                    {% endif %}
+                </div>
+            </li>
+        {% endfor %}
+    </ul>
+
 {% endblock %}
