@@ -16,6 +16,7 @@
                 <div class="collapsible-header text-white light-blue darken-4"><i class="fas fa-caret-square-down"></i>
                     <span>{{ task.task_name }} - </span>
                     <span>{{ task.due_date.strftime("%d %B %Y") }}</span>
+                    <a href="{{ url_for('edit_task', task_id=task.id) }}" class="btn green accent-4 right">Edit</a>
                 </div>
                 <div class="collapsible-body">
                     <h5>
